@@ -1,0 +1,23 @@
+[
+    {
+        "indicator_number": "A1",
+        "query": "select * from \n (select GW, team, sum(total_points) as tot_points from data group by GW, team) pivot(min(tot_points) for GW in (1, 2, 3,4,5,6,7,8)) order by team;",
+        "range": "B2:I21",
+        "startrow": "4",
+        "startcol": "B"
+    },
+    {
+        "indicator_number": "A2",
+        "query": "select * from (select GW, position, max(total_points) as tot_points from data group by GW, position) pivot(min(tot_points) for GW in (1, 2, 3, 4, 5, 6, 7, 8)) order by position;",
+        "range": "K2:R5",
+        "startrow": "4",
+        "startcol": "L"
+    },
+    {
+        "indicator_number": "A3",
+        "query": "with init as (select *, rank() over(partition by position order by tot_points desc) as rank from (select name, position, sum(total_points) as tot_points from data group by name, position order by name, position) order by tot_points desc) select name, position, tot_points from init where rank = 1 and position != 'GK'",
+        "range": "B23:D25" ,
+        "startrow": "26",
+        "startcol": "B"
+    }
+]
