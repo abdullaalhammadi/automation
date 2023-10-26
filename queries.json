@@ -1,7 +1,7 @@
 [
     {
         "indicator_number": "A1",
-        "query": "select * from \n (select GW, team, sum(total_points) as tot_points from data group by GW, team) pivot(min(tot_points) for GW in (1, 2, 3,4,5,6,7,8)) order by team;",
+        "query": "select * from (select GW, team, sum(total_points) as tot_points from data group by GW, team) pivot(min(tot_points) for GW in (1, 2, 3,4,5,6,7,8)) order by team;",
         "range": "B2:I21",
         "startrow": "4",
         "startcol": "B"
