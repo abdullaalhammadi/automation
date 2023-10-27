@@ -55,7 +55,7 @@ Consider an entry in `queries.json`:
 {
     "indicator_number": "A1",
     "query": "...",
-    "range": "B2:I21",
+    "range": "B4:J23",
     "startrow": "4",
     "startcol": "B"
 }
