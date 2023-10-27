@@ -59,6 +59,7 @@ Consider an entry in `queries.json`:
     "startrow": "4",
     "startcol": "B"
 }
+```
 
 For this entry, the SQL query will run, and its result will start populating in the Excel file from row 4 and column B.
 
