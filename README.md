@@ -7,6 +7,9 @@ This documentation explains a Python script designed to read SQL queries from a 
 - `pandas`: Used for data manipulation and exporting data to Excel.
 - `duckdb`: An embedded analytical data management system. It is used here to run SQL queries.
 - `string`: Standard Python library used for string operations.
+- `time`: Standard python library for time-based operations.
+- `tqdm`: Loop progression tracker library used in python.
+- `re`: Standard Python library for regular expression operations.
 
 ## 2. Input Data:
 
@@ -55,9 +58,7 @@ Consider an entry in `queries.json`:
 {
     "indicator_number": "A1",
     "query": "...",
-    "range": "B4:J23",
-    "startrow": "4",
-    "startcol": "B"
+    "range": "B4:J23"
 }
 ```
 
